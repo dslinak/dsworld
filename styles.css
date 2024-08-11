@@ -15,8 +15,8 @@ body {
     display: flex;
     flex-direction: column; /* Располагаем элементы вертикально */
     text-align: center;
-    padding-left: 300px; /* Устанавливаем отступ слева */
-    padding-right: 300px; /* Устанавливаем отступ справа */
+    padding-left: 250px; /* Устанавливаем отступ слева */
+    padding-right: 250px; /* Устанавливаем отступ справа */
     border: 2px solid red; /* Добавлено для проверки */
     margin: 0;
 }
