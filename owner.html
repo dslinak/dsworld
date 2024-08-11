@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Искажённый мир - Редактирование</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function checkPassword() {
+            var password = prompt("Введите пароль для доступа:");
+            if (password === "1973") {
+                document.getElementById("edit-area").style.display = "block";
+            } else {
+                alert("Неверный пароль!");
+                window.location.href = "https://dslinak.github.io/dsworld/";
+            }
+        }
+        window.onload = checkPassword;
+    </script>
 </head>
 <body>
     <div class="container">
         <h1 class="main-title">Искажённый мир - Редактирование</h1>
-        <div class="content-area">
+        <div class="content-area" id="edit-area" style="display:none;">
             <h2 id="content-title">История - Редактирование</h2>
             <textarea id="content-text" placeholder="Введите текст здесь...">
                 <!-- Ваш редактируемый текст здесь -->
