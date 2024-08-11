@@ -1,9 +1,7 @@
 let currentSection = 'История'; // Default section
-let isEditMode = true; // Initial mode is edit
 
 function updateContent(button) {
     const title = document.getElementById('content-title');
-    const contentText = document.getElementById('content-text');
     currentSection = button; // Update the current section
     
     switch (button) {
@@ -23,7 +21,7 @@ function updateContent(button) {
             title.textContent = 'Линч';
             break;
         default:
-            title.textContent = '';
+            title.textContent = 'История';
             break;
     }
 
@@ -40,25 +38,12 @@ function saveText() {
 // Function to load text from localStorage
 function loadText() {
     const savedText = localStorage.getItem(`savedText_${currentSection}`);
-    const contentText = document.getElementById('content-text');
     if (savedText !== null) {
-        contentText.value = savedText;
+        document.getElementById('content-text').value = savedText;
+        alert('Текст загружен!');
     } else {
-        contentText.value = ''; // Clear the text area if no saved text exists
-    }
-}
-
-// Function to toggle edit mode
-function toggleEditMode() {
-    const contentText = document.getElementById('content-text');
-    isEditMode = !isEditMode; // Toggle the mode
-    if (isEditMode) {
-        contentText.classList.remove('read-only');
-        contentText.removeAttribute('readonly');
-        contentText.focus();
-    } else {
-        contentText.classList.add('read-only');
-        contentText.setAttribute('readonly', true);
+        document.getElementById('content-text').value = ''; // Clear the text area if no saved text exists
+        alert('Нет сохранённого текста.');
     }
 }
 
