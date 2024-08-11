@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         function checkPassword() {
+            // Запрашиваем пароль у пользователя
             var password = prompt("Введите пароль для доступа:");
+            console.log("Пароль введён:", password); // Отладочная информация
+            
             if (password === "1973") {
                 document.getElementById("edit-area").style.display = "block";
+                console.log("Пароль верный, отображаем редактор.");
             } else {
                 alert("Неверный пароль!");
-                window.location.href = "https://dslinak.github.io/dsworld/";
+                window.location.href = "https://dslinak.github.io/dsworld/"; // Перенаправляем на публичную страницу
             }
         }
         window.onload = checkPassword;
