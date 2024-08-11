@@ -16,7 +16,7 @@ body {
     flex-direction: column; /* Располагаем элементы вертикально */
     text-align: center;
     padding-left: 300px;
-    padding-right: 300px;
+    paddint-right: 300px; /* Уменьшено для лучшего отображения */
     margin: 0 50px;
 }
 
@@ -57,7 +57,7 @@ body {
     margin-bottom: 10px;
 }
 
-.content-text {
+#content-text {
     width: calc(100% - 20px);
     height: calc(100vh - 150px); /* Задаём высоту на основе высоты окна */
     padding: 10px;
@@ -68,12 +68,6 @@ body {
     border-radius: 5px;
     resize: none;
     margin-bottom: 10px;
-    overflow-y: auto; /* Добавляем прокрутку, если текст превышает высоту */
-}
-
-.content-text.read-only {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .save-load-buttons {
