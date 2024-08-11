@@ -15,7 +15,11 @@ body {
     display: flex;
     flex-direction: column; /* Располагаем элементы вертикально */
     text-align: center;
-    margin: 0 50px;
+    padding-left: 300px; /* Устанавливаем отступ слева */
+    padding-right: 300px; /* Устанавливаем отступ справа */
+    padding-top: 50px; /* Устанавливаем отступ сверху (опционально) */
+    padding-bottom: 50px; /* Устанавливаем отступ снизу (опционально) */
+    margin: 0;
 }
 
 .main-title {
