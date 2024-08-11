@@ -15,7 +15,6 @@ body {
     display: flex;
     flex-direction: column; /* Располагаем элементы вертикально */
     text-align: center;
-    padding: 300px 300px;
     margin: 0 50px;
 }
 
