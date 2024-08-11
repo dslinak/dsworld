@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Искажённый мир</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Искажённый мир</h1>
+        <div class="button-container">
+            <button class="nav-button" onclick="updateContent('Лина')">Лина</button>
+            <button class="nav-button" onclick="updateContent('Записи')">Записи</button>
+            <button class="nav-button" onclick="updateContent('История')">История</button>
+            <button class="nav-button" onclick="updateContent('Линак')">Линак</button>
+            <button class="nav-button" onclick="updateContent('Линч')">Линч</button>
+        </div>
+        <div class="content-area">
+            <h2 id="content-title">История</h2>
+            <textarea id="content-text" class="content-text" placeholder="Текст будет отображаться здесь..."></textarea>
+            <div class="save-load-buttons">
+                <button class="action-button" onclick="saveText()">Сохранить текст</button>
+                <button class="action-button" onclick="toggleEditMode()">Переключить режим редактирования</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

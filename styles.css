@@ -1,0 +1,96 @@
+html, body {
+    height: 100%; /* Убедитесь, что html и body занимают всю высоту */
+    margin: 0; /* Убираем стандартные отступы */
+}
+
+body {
+    display: flex; /* Используем flexbox */
+    flex-direction: column; /* Растягиваем элементы по вертикали */
+    background-color: #303030; /* Цвет фона */
+    color: white;
+}
+
+.container {
+    flex: 1; /* Позволяет контейнеру занимать оставшуюся высоту */
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    text-align: center;
+    padding-left: 300px;
+    padding-right: 300px;
+    margin: 0 50px;
+}
+
+.main-title {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+.button-container {
+    margin: 20px 0;
+}
+
+.nav-button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #444;
+}
+
+.content-area {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    flex: 1; /* Позволяет контенту занимать оставшееся пространство */
+}
+
+#content-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.content-text {
+    width: calc(100% - 20px);
+    height: calc(100vh - 150px); /* Задаём высоту на основе высоты окна */
+    padding: 10px;
+    font-size: 16px;
+    color: #ddd;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 10px;
+    overflow-y: auto; /* Добавляем прокрутку, если текст превышает высоту */
+}
+
+.content-text.read-only {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.save-load-buttons {
+    margin-top: 20px;
+}
+
+.action-button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #444;
+}
