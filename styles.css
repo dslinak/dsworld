@@ -17,7 +17,8 @@ body {
     text-align: center;
     padding-left: 250px; /* Устанавливаем отступ слева */
     padding-right: 250px; /* Устанавливаем отступ справа */
-    border: 2px solid red; /* Добавлено для проверки */
+    padding-top: 50px; /* Устанавливаем отступ сверху (опционально) */
+    padding-bottom: 50px; /* Устанавливаем отступ снизу (опционально) */
     margin: 0;
 }
 
