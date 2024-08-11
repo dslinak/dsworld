@@ -1,6 +1,9 @@
 let currentSection = 'История'; // Default section
 
-function updateContent(button) {
+// Замените на URL вашего веб-приложения
+const APP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyMlJ8Ou0xM-mv-JwJNVb0Fy-8K8LU-eGf0pM_YOq34dP4oW5NoZ7VBRyAmo3KTN9KTdQ/exec';
+
+async function updateContent(button) {
     const title = document.getElementById('content-title');
     currentSection = button; // Update the current section
     
@@ -25,25 +28,34 @@ function updateContent(button) {
             break;
     }
 
-    loadText(); // Load the text specific to this section when the button is clicked
+    // Load text for the current section
+    loadText();
 }
 
-// Function to save text in localStorage
-function saveText() {
+// Function to save text to Google Sheets
+async function saveText() {
     const text = document.getElementById('content-text').value;
-    localStorage.setItem(`savedText_${currentSection}`, text);
-    alert('Текст сохранён!');
+    const response = await fetch(`${APP_SCRIPT_URL}?action=setText`, {
+        method: 'POST',
+        body: JSON.stringify({ section: currentSection, text }),
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+        alert('Текст сохранён!');
+    } else {
+        alert('Ошибка при сохранении текста.');
+    }
 }
 
-// Function to load text from localStorage
-function loadText() {
-    const savedText = localStorage.getItem(`savedText_${currentSection}`);
-    if (savedText !== null) {
-        document.getElementById('content-text').value = savedText;
-        alert('Текст загружен!');
+// Function to load text from Google Sheets
+async function loadText() {
+    const response = await fetch(`${APP_SCRIPT_URL}?action=getText&section=${currentSection}`);
+    if (response.ok) {
+        const data = await response.json();
+        document.getElementById('content-text').value = data.text;
     } else {
-        document.getElementById('content-text').value = ''; // Clear the text area if no saved text exists
-        alert('Нет сохранённого текста.');
+        alert('Ошибка при загрузке текста.');
     }
 }
 
