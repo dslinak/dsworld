@@ -6,13 +6,12 @@
     <title>Искажённый мир - Редактирование</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-        // Функция проверки пароля
         function checkPassword() {
             console.log("Проверка пароля начата."); // Отладочное сообщение
             var password = prompt("Введите пароль для доступа:");
             console.log("Пароль введён:", password); // Отладочное сообщение
             
-            if (password === "ваш_пароль") {
+            if (password === "1973") {
                 console.log("Пароль верный."); // Отладочное сообщение
                 document.getElementById("edit-area").style.display = "block";
             } else {
@@ -21,7 +20,6 @@
                 window.location.href = "https://dslinak.github.io/dsworld/"; // Перенаправляем на публичную страницу
             }
         }
-        // Вызов функции проверки пароля при загрузке страницы
         window.onload = checkPassword;
     </script>
 </head>
@@ -40,6 +38,5 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
