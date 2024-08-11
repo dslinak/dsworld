@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Искажённый мир - Редактирование</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Искажённый мир - Редактирование</h1>
+        <div class="content-area">
+            <h2 id="content-title">История - Редактирование</h2>
+            <textarea id="content-text" placeholder="Введите текст здесь...">
+                <!-- Ваш редактируемый текст здесь -->
+                Добро пожаловать в искажённый мир! Это версия для редактирования.
+            </textarea>
+            <div class="save-load-buttons">
+                <button class="action-button" onclick="saveText()">Сохранить текст</button>
+                <button class="action-button" onclick="loadText()">Загрузить текст</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
