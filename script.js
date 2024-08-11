@@ -35,6 +35,7 @@ async function updateContent(button) {
 // Function to save text to Google Sheets
 async function saveText() {
     const text = document.getElementById('content-text').value;
+    console.log('Saving text:', text);
     const response = await fetch(`${APP_SCRIPT_URL}?action=setText`, {
         method: 'POST',
         body: JSON.stringify({ section: currentSection, text }),
@@ -45,17 +46,20 @@ async function saveText() {
         alert('Текст сохранён!');
     } else {
         alert('Ошибка при сохранении текста.');
+        console.error('Save text error:', response.status, response.statusText);
     }
 }
 
 // Function to load text from Google Sheets
 async function loadText() {
+    console.log('Loading text for section:', currentSection);
     const response = await fetch(`${APP_SCRIPT_URL}?action=getText&section=${currentSection}`);
     if (response.ok) {
         const data = await response.json();
         document.getElementById('content-text').value = data.text;
     } else {
         alert('Ошибка при загрузке текста.');
+        console.error('Load text error:', response.status, response.statusText);
     }
 }
 
