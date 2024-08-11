@@ -1,24 +1,25 @@
 html, body {
-    height: 100%; /* Убедитесь, что html и body занимают всю высоту */
-    margin: 0; /* Убираем стандартные отступы */
+    height: 100%;
+    margin: 0;
 }
 
 body {
-    display: flex; /* Используем flexbox */
-    flex-direction: column; /* Растягиваем элементы по вертикали */
-    background-color: #303030; /* Цвет фона */
+    display: flex;
+    flex-direction: column;
+    background-color: #303030;
     color: white;
 }
 
 .container {
-    flex: 1; /* Позволяет контейнеру занимать оставшуюся высоту */
+    flex: 1;
     display: flex;
-    flex-direction: column; /* Располагаем элементы вертикально */
+    flex-direction: column;
     text-align: center;
     padding-left: 250px; /* Устанавливаем отступ слева */
     padding-right: 250px; /* Устанавливаем отступ справа */
-    padding-top: 50px; /* Устанавливаем отступ сверху (опционально) */
-    padding-bottom: 50px; /* Устанавливаем отступ снизу (опционально) */
+    padding-top: 50px; /* Опционально */
+    padding-bottom: 50px; /* Опционально */
+    border: 2px solid red; /* Для проверки */
     margin: 0;
 }
 
@@ -51,7 +52,7 @@ body {
     padding: 20px;
     margin-top: 20px;
     border-radius: 5px;
-    flex: 1; /* Позволяет контенту занимать оставшееся пространство */
+    flex: 1;
 }
 
 #content-title {
@@ -61,7 +62,7 @@ body {
 
 #content-text {
     width: calc(100% - 20px);
-    height: calc(100vh - 150px); /* Задаём высоту на основе высоты окна */
+    height: calc(100vh - 150px);
     padding: 10px;
     font-size: 16px;
     color: #ddd;
